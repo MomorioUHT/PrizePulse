@@ -18,7 +18,7 @@ import com.momoriouht.prizepulse.interfaces.LotteryAPIService
 import com.momoriouht.prizepulse.model.DisplayDate
 
 class MainActivity : AppCompatActivity() {
-
+    //Test Adding Commit
     final val PREF_NAME = "task_list"
     final val TASK_LIST_PREF_KEY = "items"
 
