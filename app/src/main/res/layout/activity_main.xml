@@ -1,77 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:fitsSystemWindows="true"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/buttonSecondary" />
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ตรวจหวย"
-        android:textSize="40dp" />
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="งวดประจำวันที่"
-        android:textSize="20dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ตรวจหวย"
+            android:textSize="40dp" />
 
-    <TextView
-        android:id='@+id/displayDateText'
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Loading..."
-        android:textSize="20dp"
-        android:textColor="@color/blue"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="งวดประจำวันที่"
+            android:textSize="20dp" />
 
-    <ListView
-        android:id='@+id/sampleList1'
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        <TextView
+            android:id='@+id/displayDateText'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:textSize="20dp"
+            android:textColor="@color/blue"/>
 
-    <TextView
-        android:id='@+id/cmdText'
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Waiting for next command..."
-        android:textColor="@color/red"
-        android:textSize="20dp" />
+        <TextView
+            android:id='@+id/firstPrizeDisplayText'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:textColor="@color/buttonSecondary"
+            android:textSize="20dp" />
 
-    <EditText
-        android:id='@+id/numberInputBox'
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="กรุณากรอกเลขที่ต้องการตรวจ"/>
+        <TextView
+            android:id='@+id/Last2DigitsDisplayText'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:textColor="@color/buttonSecondary"
+            android:textSize="20dp" />
 
-    <Button
-        android:id='@+id/addNumberButton'
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="เพิ่มเลขเพื่อตรวจ"
-        android:onClick="addNumberToArray"/>
+        <ListView
+            android:id='@+id/sampleList1'
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="16dp" />
 
-    <Button
-        android:id='@+id/checkLotteryButton'
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ตรวจ"
-        android:onClick="checkLottery"/>
+        <TextView
+            android:id='@+id/cmdText'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Waiting for next command..."
+            android:textColor="@color/red"
+            android:textSize="20dp" />
 
-    <Button
-        android:id='@+id/clearArrayButton'
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ล้างข้อมูล"
-        android:onClick="clearTaskList"/>
+        <EditText
+            android:id='@+id/numberInputBox'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="กรุณากรอกเลขที่ต้องการตรวจ"/>
 
-</LinearLayout>
+        <Button
+            android:id='@+id/addNumberButton'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="เพิ่มเลขเพื่อตรวจ"
+            android:onClick="addNumberToArray"/>
+
+        <Button
+            android:id='@+id/checkLotteryButton'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ตรวจ"
+            android:onClick="checkLottery"/>
+
+        <Button
+            android:id='@+id/clearArrayButton'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ล้างข้อมูล"
+            android:onClick="clearTaskList"/>
+    </LinearLayout>
+</ScrollView>

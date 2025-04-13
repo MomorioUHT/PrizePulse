@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
     //--
     private var nearFirstPrizeNumbers = listOf<String>()
 
+    private var alreadyChecked = false
+
     //Task Schedule ===============================================================================
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,11 +93,17 @@ class MainActivity : AppCompatActivity() {
     //Task Schedule ===============================================================================
 
     fun displayCmds(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         binding.cmdText.text = msg
     }
 
     fun addNumberToArray(view: View) {
+        if (alreadyChecked) {
+            numbersToCheck.clear()
+            alreadyChecked = false
+            adapter?.notifyDataSetChanged()
+            return
+        }
         val inputText = binding.numberInputBox.text.toString()
 
         if (inputText == "") {
@@ -106,6 +114,10 @@ class MainActivity : AppCompatActivity() {
             displayCmds("กรุณาใส่ตัวเลข 6 หลักเท่านั้น!")
             return
         }
+        if (numbersToCheck.contains(inputText)) {
+            displayCmds("คุณใส่เลขซ้ำ!")
+            return
+        }
 
         adapter?.add(inputText)
         displayCmds("เพิ่มเลข $inputText แล้ว")
@@ -113,6 +125,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun checkLottery(view: View) {
+        if (alreadyChecked) {
+            numbersToCheck.clear()
+            alreadyChecked = false
+            adapter?.notifyDataSetChanged()
+            return
+        }
         if (numbersToCheck.isEmpty()) {
             displayCmds("ยังไม่มีเลขให้ตรวจ")
             return
@@ -140,6 +158,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         displayCmds("ตรวจเสร็จเรียบร้อย!")
+        alreadyChecked = true
         adapter?.notifyDataSetChanged()
     }
 
@@ -183,6 +202,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun setPrizeText(firstPrize: String, last2: String) {
+        binding.firstPrizeDisplayText.text = "รางวัลที่ 1: $firstPrize"
+        binding.Last2DigitsDisplayText.text = "เลขท้าย 2 ตัว: $last2"
+    }
+
     fun fetchLotteryData() {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://www.glo.or.th/api/lottery/")
@@ -221,7 +245,10 @@ class MainActivity : AppCompatActivity() {
                     println("Near 1 Prize: $nearFirstPrizeNumbers")
 
                     val displayDate = body?.response?.displayDate
+                    val firstPrize = body?.response?.data?.first?.number?.singleOrNull()?.value.toString()
+                    val last2Digits = body?.response?.data?.last2?.number?.singleOrNull()?.value.toString()
                     setDisplayDate(displayDate)
+                    setPrizeText(firstPrize, last2Digits)
                 } else {
                     displayCmds("API Error: ${response.code()}")
                 }
