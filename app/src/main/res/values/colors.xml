@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00FF00</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="yellow">#FFFFFF00</color>
+    <color name="orange">#FFFFA500</color>
+    <color name="purple">#FF800080</color>
+    <color name="pink">#FFFFC0CB</color>
+    <color name="brown">#FFA52A2A</color>
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#FF212121</color> <!-- Dark text -->
+    <color name="textSecondary">#FF757575</color> <!-- Lighter text -->
+
+    <!-- Background Colors -->
+    <color name="background">#FFFFFF</color> <!-- White background -->
+    <color name="backgroundDark">#F5F5F5</color> <!-- Light gray background -->
+    <color name="backgroundAccent">#FF6200EE</color> <!-- Accent color background -->
+
+    <!-- Action Colors -->
+    <color name="buttonPrimary">#FF6200EE</color> <!-- Primary button -->
+    <color name="buttonSecondary">#FF018786</color> <!-- Secondary button -->
+
+    <!-- Status Bar and Navigation Bar Colors -->
+    <color name="statusBarColor">#FF6200EE</color> <!-- Status bar color -->
+    <color name="navigationBarColor">#FF121212</color> <!-- Navigation bar color -->
+
+    <!-- Notification Colors -->
+    <color name="success">#4CAF50</color> <!-- Green for success -->
+    <color name="error">#F44336</color> <!-- Red for error -->
+    <color name="warning">#FF9800</color> <!-- Yellow/orange for warnings -->
+
+    <!-- Accent Colors -->
+    <color name="headBarsColor">#FF6200EE</color> <!-- Primary color for headers or bars -->
+    <color name="primaryAccent">#FF03DAC5</color> <!-- Teal for accents -->
+    <color name="secondaryAccent">#FF018786</color> <!-- Light green for accents -->
+
+    <!-- Gray Colors for UI elements -->
+    <color name="grayLight">#E0E0E0</color> <!-- Light gray for dividers and borders -->
+    <color name="grayDark">#757575</color> <!-- Darker gray for UI elements -->
+    <color name="grayDarkest">#212121</color> <!-- Darkest gray for text and icons -->
+
+    <!-- Other Colors -->
+    <color name="lightBlue">#03A9F4</color> <!-- Light blue -->
+    <color name="teal">#009688</color> <!-- Teal color -->
+    <color name="indigo">#3F51B5</color> <!-- Indigo color -->
+    <color name="lime">#CDDC39</color> <!-- Lime green -->
+</resources>
